@@ -3,6 +3,7 @@
 const store = require('../store')
 
 const signUpSuccess = function () {
+  // $('.navbar-collapse').collapse('hide')
   $('#message').text('Successfully signed up!')
 }
 
