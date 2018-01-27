@@ -11,7 +11,20 @@ const newGiftFailure = function (e) {
   // console.log('Error in creation', e)
 }
 
+const displayGiftSuccess = function (data) {
+  console.log('inside ui success', data)
+  // $('#message').text('You created a gift!')
+  // console.log(data)
+}
+
+const displayGiftFailure = function (e) {
+  // $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
+  console.log('ui display error', e)
+}
+
 module.exports = {
   newGiftSuccess,
-  newGiftFailure
+  newGiftFailure,
+  displayGiftSuccess,
+  displayGiftFailure
 }
