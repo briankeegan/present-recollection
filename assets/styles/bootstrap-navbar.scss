@@ -1,0 +1,133 @@
+// Thanks you https://work.smarchal.com/twbscolor/
+$bg-default: #7768ae;
+$bg-highlight: #8b4da5;
+$col-default: #ecf0f1;
+$col-highligt: #ecdbff;
+$drop-down: false;
+
+.navbar-default {
+  background-color: $bg-default;
+  border-color: $bg-highlight;
+
+  .navbar-brand {
+    color: $col-default;
+
+    &:focus,
+    &:hover {
+      color: $col-highligt;
+    }
+  }
+
+  .navbar-text {
+    color: $col-default;
+  }
+
+  .navbar-nav {
+    > li {
+      > a {
+        color: $col-default;
+
+        &:focus,
+        &:hover {
+          color: $col-highligt;
+        }
+      }
+      @if $drop-down {
+        > .dropdown-menu {
+          background-color: $bg-default;
+
+          > li {
+            > a {
+              color: $col-default;
+
+              &:focus,
+              &:hover {
+                color: $col-highligt;
+                background-color: $bg-highlight;
+              }
+            }
+
+            &.divider {
+              background-color: $bg-highlight;
+            }
+          }
+        }
+      }
+    }
+    @if $drop-down {
+      .open .dropdown-menu > .active {
+        > a:focus,
+         > a:hover,
+        > a {
+          color: $col-highligt;
+          background-color: $bg-highlight;
+        }
+      }
+    }
+
+    > .active {
+      > a:focus,
+       > a:hover,
+      > a {
+        color: $col-highligt;
+        background-color: $bg-highlight;
+      }
+    }
+
+    > .open {
+      > a:focus,
+       > a:hover,
+      > a {
+        color: $col-highligt;
+        background-color: $bg-highlight;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    border-color: $bg-highlight;
+
+    &:focus,
+    &:hover {
+      background-color: $bg-highlight;
+    }
+
+    .icon-bar {
+      background-color: $col-default;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $col-default;
+  }
+
+  .navbar-link {
+    color: $col-default;
+
+    &:hover {
+      color: $col-highligt;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $col-default;
+
+      &:focus,
+      &:hover {
+        color: $col-highligt;
+      }
+    }
+
+    > .active {
+      > a:focus,
+       > a:hover,
+      > a {
+        color: $col-highligt;
+        background-color: $bg-highlight;
+      }
+    }
+  }
+}
