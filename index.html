@@ -27,7 +27,7 @@
           <div class="collapse navbar-collapse">
             <form class="navbar-form navbar-left inital-page" id="sign-in">
               <div class="form-group">
-                <input class="form-control" name="credentials[email]" type="email" placeholder="Email" autofocus required />
+                <input class="form-control" name="credentials[email]" type="text" placeholder="Email" autofocus required />
               </div>
               <div class="form-group">
                 <input class="form-control" name="credentials[password]" type="password" placeholder="Password" required />
@@ -62,8 +62,9 @@
       <!-- main content -->
       <main class="container-fluid">
         <div class="container message-container">
-          <h1 class="message">
+          <h1 class="message" id="message">
             <!-- Message goes here -->
+            Hey there!
           </h1>
         </div>
         <!-- Modals -->
@@ -82,7 +83,7 @@
                   <div class="form-group">
                     <label class="hidden-xs col-sm-2 control-label">Email:</label>
                     <div class="col-sm-10">
-                      <input class="form-control" name="credentials[email]" type="email" placeholder="Email" required />
+                      <input class="form-control" name="credentials[email]" type="text" placeholder="Email" required />
                     </div>
                   </div>
                   <div class="form-group">
