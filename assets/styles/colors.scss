@@ -1,0 +1,34 @@
+// $color1: rgba(0, 38, 66, 1); // Dark blue
+// $color2: rgba(132, 0, 50, 1); // Red
+// $color3: rgba(255, 119, 3, 1); // Orange
+// $color4: rgba(229, 218, 218, 1); // Light Grey
+// $color5: rgba(39, 39, 39, 1); // Black
+
+$color1: rgba(128, 206, 215, 1);
+$color2: rgba(192, 253, 251, 1);
+$color3: rgba(99, 199, 178, 1);
+$color4: rgba(252, 255, 253, 1);
+$color5: rgba(119, 104, 174, 1);
+
+body {
+  background-color: $color4;
+  color: $color1;
+}
+
+footer {
+  background-color: $color5;
+  color: darken($color4, 20%);
+
+  & a {
+    color: $color2;
+
+    :visited,
+    :active {
+      color: $color2;
+    }
+
+    &:hover {
+      color: darken($color3, 25%);
+    }
+  }
+}

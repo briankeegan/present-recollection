@@ -1,0 +1,15 @@
+$ttt-width: 700px;
+$prev-game-width: $ttt-width / 2;
+$none: 0;
+$max-width: 100%;
+$norm-height: 50px;
+
+
+footer {
+  height: $norm-height;
+  width: $max-width;
+}
+
+.message-container {
+  min-height: $norm-height * 1.5;
+}

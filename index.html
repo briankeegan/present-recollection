@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Present Recollection</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,15 +11,167 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <body>
+      <!-- navbar -->
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Present Recollection</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <form class="navbar-form navbar-left inital-page" id="sign-in">
+              <div class="form-group">
+                <input class="form-control" name="credentials[email]" type="email" placeholder="Email" autofocus required />
+              </div>
+              <div class="form-group">
+                <input class="form-control" name="credentials[password]" type="password" placeholder="Password" required />
+              </div>
+              <div class="form-group">
+                <div class="form-group-btn">
+                  <input type="submit" class="btn btn-primary" value="Sign in!" />
+                </div>
+              </div>
+              </form>
+            <ul class="nav navbar-nav" >
+              <li><a href="#" class="inital-page" data-toggle="modal" data-target="#signUpModal" >Sign Up</a></li>
+            </ul>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <button class="dropdown-toggle after-sign-in btn btn-danger navbar-btn" data-toggle="dropdown">
+                  Account
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="after-sign-in" data-toggle="modal" data-target="#changePasswordModal" >Change Password</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+              </li>
+              <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- main content -->
+      <main class="container-fluid">
+        <div class="container message-container">
+          <h1 class="message">
+            <!-- Message goes here -->
+          </h1>
+        </div>
+        <!-- Modals -->
+        <!-- signUpModal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Sign Up</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">Email:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="credentials[email]" type="email" placeholder="Email" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">Password:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="credentials[password]" type="password" placeholder="Password" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">Retype Password:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="credentials[password_confirmation]" type="password" placeholder="Retype Password" required />
+                    </div>
+                  </div>
+                  <input type="submit" class="btn btn-primary form-control" value="Submit!" />
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- changePasswordModal -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Change Password</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+              </div>
+              <div class="modal-body">
+                <form id="change-password" class="form-horizontal">
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">Current Password:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="passwords[old]" type="password" placeholder="Current Password" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">New Password:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="passwords[new]" type="password" placeholder="New Password" required />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="hidden-xs col-sm-2 control-label">Retype New Password:</label>
+                    <div class="col-sm-10">
+                      <input class="form-control" name="passwords[new-retyped]" type="password" placeholder="Retype New Password"required />
+                    </div>
+                  </div>
+                  <input type="submit" class="btn btn-primary form-control" value="Submit!" />
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- aboutModal -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title">Tic Tac Toe</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+              </div>
+              <div class="modal-body">
+                <p>***ADD CONTENT***</p>
+                <p>If you would like to learn more about my process please checkout the <a href="https://github.com/briankeegan/present-recollection/blob/master/README.md" target="_blank">README.md</a> section for <a href="https://github.com/briankeegan/present-recollection" target="_blank">this repo</a> on <a href="https://github.com/briankeegan/" target="_blank">my github</a> page!</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+      <!-- footer -->
+      <footer>
+        <p>Web Design by <a href="http://briankeegan.tech" target="_blank">Brian Keegan</a>, December 2017</p>
+        <a href="mailto:briankeeganwebdesign@gmail.com" >briankeeganwebdesign@gmail.com</a>
+      </footer>
     </body>
 </html>
