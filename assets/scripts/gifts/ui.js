@@ -1,6 +1,7 @@
 'use strict'
 
-// const newGiftSuccess =
+const displayGiftsTemplate = require('../templates/display-gifts.handlebars')
+
 const newGiftSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
   $('#message').text('You created a gift!')
@@ -14,7 +15,9 @@ const newGiftFailure = function (e) {
 const displayGiftSuccess = function (data) {
   console.log('inside ui success', data)
   // $('#message').text('You created a gift!')
-  // console.log(data)
+  // console.log(data.gifts)
+  const showGiftsHTML = displayGiftsTemplate({ gifts: data.gifts })
+  $('.content').html(showGiftsHTML)
 }
 
 const displayGiftFailure = function (e) {

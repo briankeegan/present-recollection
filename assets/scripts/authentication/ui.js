@@ -17,7 +17,7 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('#message').text('Succesfully signed in as ' + store.user.email)
+  $('#message').text('Welcom ' + store.user.email + '!')
   $('.after-sign-in').css('display', 'block')
   $('.inital-page').css('display', 'none')
   // $('.navbar-brand').text(store.user.email) -- Where to put email/username
@@ -30,7 +30,7 @@ const signInFailure = function (e) {
 
 const changePasswordSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
-  $('#message').text('Successfully changed password!')
+  $('#message').text('Your password was updated!')
 }
 
 const changePasswordFailure = function (error) {
@@ -44,7 +44,7 @@ const changePasswordFailure = function (error) {
 
 const logoutSuccess = function () {
   $('.navbar-collapse').collapse('hide')
-  $('#message').text('Successfully signed out!')
+  $('#message').text('You\'ve logged out!')
   store.user = null
   $('.after-sign-in').css('display', 'none')
   $('.inital-page').css('display', 'block')
