@@ -8,6 +8,8 @@
     </div>
     <div class="modal-body">
       <form id="update-gift" class="form-horizontal">
+
+
         <div class="form-group">
           <label class="hidden-xs col-sm-2 control-label">Nickname:</label>
           <div class="col-sm-10">
@@ -26,7 +28,11 @@
             <input class="form-control" name="gift[gift]" type="text" placeholder="Gift Idea" value="{{gift.gift}}" required />
           </div>
         </div>
+        <input name="gift[id]" type="hidden" value="{{gift.id}}" />
         <input type="submit" class="btn btn-primary form-control" value="Update!" />
+
+
+
       </form>
     </div>
     <div class="modal-footer">

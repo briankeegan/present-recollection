@@ -41,6 +41,14 @@ const fillUpdateGiftModal = function (data) {
   $('#updateGiftIdeaModal').modal('toggle')
 }
 
+const updateGiftSuccess = function (data) {
+  $('#message').text(`Your're gift has been updated`)
+}
+
+const updateGiftFailure = function (e) {
+  $('#message').text(`Unable to update gift. It's perfect the way it is!`)
+}
+
 module.exports = {
   newGiftSuccess,
   newGiftFailure,
@@ -48,5 +56,7 @@ module.exports = {
   displayGiftFailure,
   retrieveGiftSuccess,
   retrieveGiftFailure,
-  fillUpdateGiftModal
+  fillUpdateGiftModal,
+  updateGiftSuccess,
+  updateGiftFailure
 }

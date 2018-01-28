@@ -11,27 +11,13 @@ const onDisplayGifts = function () {
     .catch(ui.displayGiftFailure)
 }
 
-// const OnRetrieveGift = function (data) {
-//   const id = data.target.dataset.id
-//   api.retrieveGift(id)
-//     .then(ui.retrieveGiftSuccess)
-//     .catch(ui.retrieveGiftFailure)
-// }
-
 const onOpenUpdateGiftModal = function (data) {
   const id = data.target.dataset.id
+  console.log(id)
   api.retrieveGift(id)
     .then(ui.fillUpdateGiftModal)
     .catch(ui.retrieveGiftFailure)
 }
-
-//
-// const onUpdateGift = function (data) {
-//   const id = data.target.dataset.id
-//   api.updateGift(id)
-//   // .then(ui.updateGiftSuccess)
-//   // .catch(ui.updateGiftFailure)
-// }
 
 const onNewGift = function (event) {
   const data = getFormFields(this)
@@ -56,7 +42,7 @@ const onUpdateGift = function (event) {
 const addHandler = function () {
   $('#new-gift').on('submit', onNewGift)
   $('#content').on('click', '.gift-update', onOpenUpdateGiftModal)
-  $('#update-gift').on('submit', onUpdateGift)
+  $('#update-gift-content').on('submit', '#update-gift', onUpdateGift)
   // $('.content').on('click', OnRetrieveGift)
 }
 
