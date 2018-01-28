@@ -44,9 +44,20 @@ const retrieveGift = function (id) {
   })
 }
 
+const deleteGift = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/gifts/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGift,
   displayGifts,
   retrieveGift,
-  updateGift
+  updateGift,
+  deleteGift
 }

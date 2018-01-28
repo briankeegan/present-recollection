@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const mainPageTemplate = require('../templates/mainpage.handlebars')
 
 const signUpSuccess = function () {
   // $('.navbar-collapse').collapse('hide')
@@ -48,6 +49,8 @@ const logoutSuccess = function () {
   store.user = null
   $('.after-sign-in').css('display', 'none')
   $('.inital-page').css('display', 'block')
+  const mainPageHTML = mainPageTemplate()
+  $('#content').html(mainPageHTML)
 }
 
 const logoutFailure = function () {

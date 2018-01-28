@@ -5,10 +5,12 @@ const updateGiftModalTemplate = require('../templates/update-gift-modal.handleba
 
 const newGiftSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
+  $('#newGiftIdeaModal').modal('toggle')
   $('#message').text('You created a gift!')
   // console.log(data)
 }
 const newGiftFailure = function (e) {
+  $('#newGiftIdeaModal').modal('toggle')
   $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
   // console.log('Error in creation', e)
 }
@@ -18,13 +20,7 @@ const displayGiftSuccess = function (data) {
   // console.log(data.gifts)
   const showGiftsHTML = displayGiftsTemplate({ gifts: data.gifts })
   $('#content').html(showGiftsHTML)
-  // work around, as popovers are created after dom load
-  $('[data-toggle="popover"]').popover({
-    placement: 'bottom',
-    html: 'true',
-    title: 'Are you sure?',
-    content: '<div class="btn-group"><button type="button" class="btn btn-danger btn-sm">Delete Gift</button><button type="button" class="btn btn-default btn-sm">Nevermind</button></div>'
-  })
+  return data.gifts
 }
 
 const displayGiftFailure = function (e) {
@@ -60,6 +56,16 @@ const updateGiftFailure = function (e) {
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
+const deleteGiftSuccess = function (data) {
+  $('#message').text(`Your're gift has been removed`)
+}
+
+const deleteGiftFailure = function (e) {
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#update-gift-content').html('')
+  $('#message').text(`Unable to remove gift. If it's that good, maybe you should reconsider...`)
+}
+
 module.exports = {
   newGiftSuccess,
   newGiftFailure,
@@ -69,5 +75,7 @@ module.exports = {
   retrieveGiftFailure,
   fillUpdateGiftModal,
   updateGiftSuccess,
-  updateGiftFailure
+  updateGiftFailure,
+  deleteGiftSuccess,
+  deleteGiftFailure
 }
