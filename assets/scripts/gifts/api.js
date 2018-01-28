@@ -14,7 +14,6 @@ const newGift = function (data) {
 }
 
 const updateGift = function (data) {
-  console.log(data,'data')
   return $.ajax({
     url: config.apiOrigin + '/gifts/' + data.gift.id,
     method: 'PATCH',

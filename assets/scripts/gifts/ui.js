@@ -18,6 +18,13 @@ const displayGiftSuccess = function (data) {
   // console.log(data.gifts)
   const showGiftsHTML = displayGiftsTemplate({ gifts: data.gifts })
   $('#content').html(showGiftsHTML)
+  // work around, as popovers are created after dom load
+  $('[data-toggle="popover"]').popover({
+    placement: 'bottom',
+    html: 'true',
+    title: 'Are you sure?',
+    content: '<div class="btn-group"><button type="button" class="btn btn-danger btn-sm">Delete Gift</button><button type="button" class="btn btn-default btn-sm">Nevermind</button></div>'
+  })
 }
 
 const displayGiftFailure = function (e) {
@@ -42,10 +49,14 @@ const fillUpdateGiftModal = function (data) {
 }
 
 const updateGiftSuccess = function (data) {
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#update-gift-content').html('')
   $('#message').text(`Your're gift has been updated`)
 }
 
 const updateGiftFailure = function (e) {
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#update-gift-content').html('')
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
