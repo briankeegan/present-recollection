@@ -13,8 +13,18 @@ const newGift = function (data) {
   })
 }
 
+const updateGift = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/gifts/' + store.user.id,
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const displayGifts = function () {
-  console.log('gift api')
   return $.ajax({
     url: config.apiOrigin + '/gifts',
     method: 'GET',
@@ -24,7 +34,19 @@ const displayGifts = function () {
   })
 }
 
+const retrieveGift = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/gifts/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   newGift,
-  displayGifts
+  displayGifts,
+  retrieveGift,
+  updateGift
 }

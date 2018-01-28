@@ -1,6 +1,7 @@
 'use strict'
 
 const displayGiftsTemplate = require('../templates/display-gifts.handlebars')
+const updateGiftModalTemplate = require('../templates/update-gift-modal.handlebars')
 
 const newGiftSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
@@ -14,20 +15,38 @@ const newGiftFailure = function (e) {
 
 const displayGiftSuccess = function (data) {
   console.log('inside ui success', data)
-  // $('#message').text('You created a gift!')
   // console.log(data.gifts)
   const showGiftsHTML = displayGiftsTemplate({ gifts: data.gifts })
-  $('.content').html(showGiftsHTML)
+  $('#content').html(showGiftsHTML)
 }
 
 const displayGiftFailure = function (e) {
-  // $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
-  console.log('ui display error', e)
+  $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
+  // console.log('ui display error', e)
+}
+
+const retrieveGiftSuccess = function (data) {
+  console.log('inside ui success', data)
+  // console.log(data.gifts)
+}
+
+const retrieveGiftFailure = function (e) {
+  $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
+  // console.log('ui display error', e)
+}
+
+const fillUpdateGiftModal = function (data) {
+  const updateGiftModalHTML = updateGiftModalTemplate({ gift: data.gift })
+  $('#update-gift-content').html(updateGiftModalHTML)
+  $('#updateGiftIdeaModal').modal('toggle')
 }
 
 module.exports = {
   newGiftSuccess,
   newGiftFailure,
   displayGiftSuccess,
-  displayGiftFailure
+  displayGiftFailure,
+  retrieveGiftSuccess,
+  retrieveGiftFailure,
+  fillUpdateGiftModal
 }

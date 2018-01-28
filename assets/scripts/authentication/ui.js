@@ -4,6 +4,7 @@ const store = require('../store')
 
 const signUpSuccess = function () {
   // $('.navbar-collapse').collapse('hide')
+  $('#signUpModal').modal('toggle')
   $('#message').text('Successfully signed up!')
 }
 
@@ -24,17 +25,16 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (e) {
-  $('.play-again-h1').hide()
   $('#message').text('Invalid username or password')
 }
 
 const changePasswordSuccess = function (data) {
+  $('#changePasswordModal').modal('toggle')
   $('.navbar-collapse').collapse('hide')
   $('#message').text('Your password was updated!')
 }
 
 const changePasswordFailure = function (error) {
-  $('.play-again-h1').hide()
   if (error) {
     $('#message').text('Error changing password')
   } else {
