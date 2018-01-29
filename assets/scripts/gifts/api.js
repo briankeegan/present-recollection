@@ -14,6 +14,7 @@ const newGift = function (data) {
 }
 
 const updateGift = function (data) {
+  // console.log('update gift', data)
   return $.ajax({
     url: config.apiOrigin + '/gifts/' + data.gift.id,
     method: 'PATCH',
@@ -25,6 +26,7 @@ const updateGift = function (data) {
 }
 
 const displayGifts = function () {
+  // console.log('dipslay gift API')
   return $.ajax({
     url: config.apiOrigin + '/gifts',
     method: 'GET',
