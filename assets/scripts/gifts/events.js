@@ -35,6 +35,7 @@ const onUpdateGift = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   this.reset()
+  console.log(data)
   api.updateGift(data)
     .then(ui.updateGiftSuccess)
     .then(onDisplayGifts)
@@ -50,7 +51,6 @@ const onDeleteGift = function (event) {
 }
 
 const addHandler = function () {
-
   $('#content').on('click', '.gift-update', onOpenUpdateGiftModal)
   $('body').on('mousedown', '.gift-delete', onDeleteGift)
   $('#updateGiftIdeaModal').on('submit', '#update-gift', onUpdateGift)

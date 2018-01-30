@@ -43,6 +43,7 @@ const retrieveGiftFailure = function (e) {
 }
 
 const fillUpdateGiftModal = function (data) {
+  console.log(data)
   const updateGiftModalHTML = updateGiftModalTemplate({ gift: data.gift })
   $('#updateGiftIdeaModal').html(updateGiftModalHTML)
   $('#updateGiftIdeaModal').modal('toggle')
@@ -52,6 +53,8 @@ const updateGiftSuccess = function (data) {
   $('#updateGiftIdeaModal').modal('toggle')
   $('#updateGiftIdeaModal').html('')
   $('#message').text(`Your're gift has been updated`)
+  // return in order to display gifts!
+  return data.gift.friend_id
 }
 
 const updateGiftFailure = function () {
