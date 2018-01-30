@@ -2,7 +2,7 @@
 
 // const getFormFields = require(`../../../lib/get-form-fields`)
 // const api = require(`./api`)
-// const ui = require(`./ui`)
+const ui = require(`./ui`)
 // const store = require('../store')
 
 const onDeleteFriend = function (event) {
@@ -11,6 +11,7 @@ const onDeleteFriend = function (event) {
 
 const addHandler = function () {
   $('body').on('click', '.friend-delete', onDeleteFriend)
+  $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
 }
 
 module.exports = {

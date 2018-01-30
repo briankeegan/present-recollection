@@ -1,6 +1,7 @@
 'use strict'
 
 const updateFriendModalTemplate = require('../templates/display-friends.handlebars')
+const newFriendFormTemplate = require('../templates/new-friend-form.handlebars')
 const addPopovers = require('../templates/add_popovers.js')
 
 const displayFriendsSuccess = function (friends) {
@@ -15,7 +16,14 @@ const displayFriendsFailure = function (e) {
   // console.log('ui display error', e)
 }
 
+const loadNewFriendForm = function (data) {
+  // console.log(data)
+  const newFriendFormHTML = newFriendFormTemplate()
+  $('#content').html(newFriendFormHTML)
+}
+
 module.exports = {
   displayFriendsSuccess,
-  displayFriendsFailure
+  displayFriendsFailure,
+  loadNewFriendForm
 }
