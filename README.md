@@ -117,3 +117,4 @@ https://gist.github.com/onpubcom/1772996 site-->
 <!-- thanks kate -->
 <!-- thank shaun -->
 <!-- who else -->
+<!-- https://paulund.co.uk/capitalize-first-letter-string-javascript -->
