@@ -17,11 +17,11 @@ const newGiftFailure = function (e) {
 }
 
 const displayGiftSuccess = function (data) {
-  console.log('inside ui success', data)
-  // console.log(data.gifts)
-  const showGiftsHTML = displayGiftsTemplate({ gifts: data.gifts })
+  console.log('inside ui success', data.friend.nickname)
+
+  const showGiftsHTML = displayGiftsTemplate({ friend: data.friend })
   $('#content').html(showGiftsHTML)
-  return data.gifts
+  // popovers
 }
 
 const displayGiftFailure = function (e) {

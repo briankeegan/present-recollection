@@ -3,28 +3,15 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require(`./ui`)
-// const store = require('../store')
+const store = require('../store')
+const friendApi = require('../friends/api.js')
 
-const addPopOverListener = function (gifts) {
-  // add popover listener for each delete gift button
-  gifts.forEach(gift => {
-    $(`[data-toggle="popover-${gift.id}"]`).popover({
-      placement: 'bottom',
-      html: 'true',
-      title: 'Are you sure?',
-      content: `<div class="btn-group">
-  <button data-id="${gift.id}" type="button" class="gift-delete btn btn-danger btn-sm">Delete Gift</button>
-  <button type="button" class="btn btn-default btn-sm">Nevermind</button>
-</div>`
-    })
-  })
-}
+const onDisplayGifts = function (event) {
+  const id = $(event.target).parents('.row').data('id')
+  // const id2 = $(event.target).parents('div[class^="friend-"]')
 
-const onDisplayGifts = function () {
-  // console.log(event)
-  api.displayGifts()
+  friendApi.retrieveFriend(id)
     .then(ui.displayGiftSuccess)
-    .then(addPopOverListener)
     .catch(ui.displayGiftFailure)
 }
 

@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require(`./ui`)
+const giftEvents = require(`../gifts/events.js`)
 // const store = require('../store')
 
 const onDeleteFriend = function (event) {
@@ -52,6 +53,7 @@ const addHandler = function () {
   $('#update-gift-content').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#update-gift-content').on('submit', '#update-friend', onUpdateFriend)
+  $('#content').on('click', 'div.show-gifts', giftEvents.onDisplayGifts)
 }
 
 module.exports = {

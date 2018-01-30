@@ -37,6 +37,7 @@ As a super user I want to be able to organize the view in which I see my gifts, 
 As a user I want to:
    - sign up and log in to a private account.
    - sign out
+   - change my password
 
 As a logged in user I want to:
    - view a single gift idea

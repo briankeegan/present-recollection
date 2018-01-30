@@ -1,13 +1,13 @@
-{{#each gifts as |gift|}}
+
+<h1>friend.nickname</h1>
+<button class="btn btn-success btn-lg btn-center" type="button" id="load-friends">Back to Friends</button>
+{{#each friend.gifts as |gift|}}
 
   <div class="row">
     <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">
-            <span>{{gift.nickname}} </span>
-            <span class="pull-right">{{gift.dob}}</span>
-          </h3>
+          <!-- Leave for blue top! -->
         </div>
         <div class="panel-body">
           {{gift.gift_idea}}

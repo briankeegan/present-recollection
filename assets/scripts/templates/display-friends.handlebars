@@ -1,10 +1,10 @@
 <button class="btn btn-success btn-lg btn-center" type="button" id="new-friend">Add Friend</button>
 
 {{#each friends as |friend|}}
-  <div class="row friend-{{friend.id}}" >
+  <div class="row friend-{{friend.id}}" data-id="{{friend.id}}">
     <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
       <div class="panel panel-primary">
-        <div class="panel-heading">
+        <div class="panel-heading show-gifts">
           <h3 class="panel-title">
             <span>{{friend.nickname}} </span>
             <span class="pull-right">{{friend.dob}}</span>
