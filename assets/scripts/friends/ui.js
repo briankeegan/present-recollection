@@ -6,7 +6,7 @@ const addPopovers = require('../templates/add_popovers.js')
 const updateFriendModalTemplate = require('../templates/update-friend-form.handlebars')
 
 const displayFriendsSuccess = function (data) {
-  console.log('inside ui success', data)
+  console.log(data.friends)
   const displayFriendsHTML = displayFriendsTemplate({ friends: data.friends })
   $('#content').html(displayFriendsHTML)
   addPopovers(data.friends, 'friend')
@@ -44,6 +44,18 @@ const retrieveFriendFailure = function (e) {
   // console.log('ui display error', e)
 }
 
+const updateFriendSuccess = function (data) {
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#update-gift-content').html('')
+  $('#message').text(`You're Friend has been updated`)
+}
+
+const updateFriendFailure = function (e) {
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#update-gift-content').html('')
+  $('#message').text(`Unable to update Friend. They're perfect the way they are!`)
+}
+
 module.exports = {
   displayFriendsSuccess,
   displayFriendsFailure,
@@ -51,5 +63,7 @@ module.exports = {
   addFriendSuccess,
   addFriendFailure,
   fillUpdateFriendModal,
-  retrieveFriendFailure
+  retrieveFriendFailure,
+  updateFriendSuccess,
+  updateFriendFailure
 }

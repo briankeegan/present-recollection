@@ -32,11 +32,23 @@ const onOpenUpdateFriendModal = function (data) {
     .catch(ui.retrieveFriendFailure)
 }
 
+const onUpdateFriend = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  this.reset()
+  // console.log(data)
+  api.updateFriend(data)
+    .then(ui.updateFriendSuccess)
+    .then(onDisplayFriends)
+    .catch(ui.updateFriendFailure)
+}
+
 const addHandler = function () {
   $('body').on('click', '.friend-delete', onDeleteFriend)
   $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
   $('#update-gift-content').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
+  $('#update-gift-content').on('submit', '#update-friend', onUpdateFriend)
 }
 
 module.exports = {

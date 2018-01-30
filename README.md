@@ -106,3 +106,13 @@ Build front, connect to back
  - Fix up UI.
 
 ##    Plan of attack
+
+
+<!--
+How to sort by DOB -- come back to this when with crud
+https://gist.github.com/onpubcom/1772996 site-->
+
+<!-- thank kostant -->
+<!-- thanks kate -->
+<!-- thank shaun -->
+<!-- who else -->

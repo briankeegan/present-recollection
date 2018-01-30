@@ -36,8 +36,21 @@ const retrieveFriend = function (id) {
   })
 }
 
+const updateFriend = function (data) {
+  // console.log('update friend', data)
+  return $.ajax({
+    url: config.apiOrigin + '/friends/' + data.friend.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   displayFriends,
   addFriend,
-  retrieveFriend
+  retrieveFriend,
+  updateFriend
 }
