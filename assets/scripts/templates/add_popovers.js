@@ -1,7 +1,7 @@
 const addPopovers = function (items, name) {
   items.forEach(item => {
     $(`[data-toggle="popover-${item.id}"]`).popover({
-      placement: 'bottom',
+      placement: 'auto bottom',
       html: 'true',
       title: 'Are you sure?',
       content: `<div class="btn-group">

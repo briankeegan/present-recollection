@@ -6,7 +6,10 @@ const ui = require(`./ui`)
 // const store = require('../store')
 
 const onDeleteFriend = function (event) {
-  console.log('WOrks woot', event)
+  const id = event.target.dataset.id
+  api.deleteFriend(id)
+    .then(() => ui.deleteFriendSuccess(id))
+    .catch(ui.deleteFriendFailure)
 }
 
 const onAddFriend = function (event) {
@@ -44,7 +47,7 @@ const onUpdateFriend = function (event) {
 }
 
 const addHandler = function () {
-  $('body').on('click', '.friend-delete', onDeleteFriend)
+  $('body').on('mousedown', '.friend-delete', onDeleteFriend)
   $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
   $('#update-gift-content').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)

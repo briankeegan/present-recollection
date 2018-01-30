@@ -51,19 +51,17 @@ const updateGiftSuccess = function (data) {
   $('#message').text(`Your're gift has been updated`)
 }
 
-const updateGiftFailure = function (e) {
+const updateGiftFailure = function () {
   $('#updateGiftIdeaModal').modal('toggle')
   $('#update-gift-content').html('')
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
-const deleteGiftSuccess = function (data) {
+const deleteGiftSuccess = function () {
   $('#message').text(`Your're gift has been removed`)
 }
 
-const deleteGiftFailure = function (e) {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#update-gift-content').html('')
+const deleteGiftFailure = function () {
   $('#message').text(`Unable to remove gift. If it's that good, maybe you should reconsider...`)
 }
 

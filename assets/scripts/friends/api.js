@@ -48,9 +48,21 @@ const updateFriend = function (data) {
   })
 }
 
+const deleteFriend = function (id) {
+  // console.log('Inside friendapi', id)
+  return $.ajax({
+    url: config.apiOrigin + '/friends/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   displayFriends,
   addFriend,
   retrieveFriend,
-  updateFriend
+  updateFriend,
+  deleteFriend
 }

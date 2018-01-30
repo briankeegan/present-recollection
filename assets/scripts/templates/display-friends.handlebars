@@ -1,7 +1,7 @@
 <button class="btn btn-success btn-lg btn-center" type="button" id="new-friend">Add Friend</button>
 
 {{#each friends as |friend|}}
-  <div class="row">
+  <div class="row friend-{{friend.id}}" >
     <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
       <div class="panel panel-primary">
         <div class="panel-heading">

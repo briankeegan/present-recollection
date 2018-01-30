@@ -6,7 +6,7 @@ const addPopovers = require('../templates/add_popovers.js')
 const updateFriendModalTemplate = require('../templates/update-friend-form.handlebars')
 
 const displayFriendsSuccess = function (data) {
-  console.log(data.friends)
+  // console.log(data.friends)
   const displayFriendsHTML = displayFriendsTemplate({ friends: data.friends })
   $('#content').html(displayFriendsHTML)
   addPopovers(data.friends, 'friend')
@@ -50,10 +50,19 @@ const updateFriendSuccess = function (data) {
   $('#message').text(`You're Friend has been updated`)
 }
 
-const updateFriendFailure = function (e) {
+const updateFriendFailure = function () {
   $('#updateGiftIdeaModal').modal('toggle')
   $('#update-gift-content').html('')
   $('#message').text(`Unable to update Friend. They're perfect the way they are!`)
+}
+
+const deleteFriendSuccess = function (id) {
+  $('#message').text(`Your friend has been removed`)
+  $('.friend-' + id).remove()
+}
+
+const deleteFriendFailure = function () {
+  $('#message').text(`Unable to remove friend.  My bad.`)
 }
 
 module.exports = {
@@ -65,5 +74,7 @@ module.exports = {
   fillUpdateFriendModal,
   retrieveFriendFailure,
   updateFriendSuccess,
-  updateFriendFailure
+  updateFriendFailure,
+  deleteFriendSuccess,
+  deleteFriendFailure
 }
