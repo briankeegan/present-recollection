@@ -47,13 +47,18 @@ const onUpdateFriend = function (event) {
     .catch(ui.updateFriendFailure)
 }
 
+const onClickFriend = function (event) {
+  const id = $(event.target).parents('.row').data('id')
+  giftEvents.onDisplayGifts(id)
+}
+
 const addHandler = function () {
   $('body').on('mousedown', '.friend-delete', onDeleteFriend)
   $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
   $('#updateGiftIdeaModal').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
-  $('#content').on('click', 'div.show-gifts', giftEvents.onDisplayGifts)
+  $('#content').on('click', 'div.show-gifts', onClickFriend)
   $('#content').on('click', '#load-friends', onDisplayFriends)
 }
 

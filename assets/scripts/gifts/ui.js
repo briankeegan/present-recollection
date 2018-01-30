@@ -2,16 +2,19 @@
 
 const displayGiftsTemplate = require('../templates/display-gifts.handlebars')
 const updateGiftModalTemplate = require('../templates/update-gift-modal.handlebars')
+const newGiftModalTemplate = require('../templates/new-gift-form.handlebars')
 // const addPopovers = require('../templates/add_popovers.js')
 
 const newGiftSuccess = function (data) {
-  $('.navbar-collapse').collapse('hide')
-  $('#newGiftIdeaModal').modal('toggle')
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text('You created a gift!')
-  // console.log(data)
+  // return in order to display gifts!
+  return data.gift.friend_id
 }
 const newGiftFailure = function (e) {
-  $('#newGiftIdeaModal').modal('toggle')
+  $('#updateGiftIdeaModal').modal('toggle')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
   // console.log('Error in creation', e)
 }
@@ -41,19 +44,19 @@ const retrieveGiftFailure = function (e) {
 
 const fillUpdateGiftModal = function (data) {
   const updateGiftModalHTML = updateGiftModalTemplate({ gift: data.gift })
-  $('#update-gift-content').html(updateGiftModalHTML)
+  $('#updateGiftIdeaModal').html(updateGiftModalHTML)
   $('#updateGiftIdeaModal').modal('toggle')
 }
 
 const updateGiftSuccess = function (data) {
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#update-gift-content').html('')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text(`Your're gift has been updated`)
 }
 
 const updateGiftFailure = function () {
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#update-gift-content').html('')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
@@ -63,6 +66,14 @@ const deleteGiftSuccess = function () {
 
 const deleteGiftFailure = function () {
   $('#message').text(`Unable to remove gift. If it's that good, maybe you should reconsider...`)
+}
+
+const openNewGiftModal = function (data) {
+  const friendId = data.target.dataset.id
+  console.log(friendId)
+  const newGiftModalHTML = newGiftModalTemplate({friendId: friendId})
+  $('#updateGiftIdeaModal').html(newGiftModalHTML)
+  $('#updateGiftIdeaModal').modal('toggle')
 }
 
 module.exports = {
@@ -76,5 +87,6 @@ module.exports = {
   updateGiftSuccess,
   updateGiftFailure,
   deleteGiftSuccess,
-  deleteGiftFailure
+  deleteGiftFailure,
+  openNewGiftModal
 }

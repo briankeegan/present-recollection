@@ -3,13 +3,11 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require(`./ui`)
-const store = require('../store')
+// const store = require('../store')
 const friendApi = require('../friends/api.js')
 
-const onDisplayGifts = function (event) {
-  const id = $(event.target).parents('.row').data('id')
-  // const id2 = $(event.target).parents('div[class^="friend-"]')
-
+const onDisplayGifts = function (id) {
+  console.log('herhehrerhe')
   friendApi.retrieveFriend(id)
     .then(ui.displayGiftSuccess)
     .catch(ui.displayGiftFailure)
@@ -26,6 +24,7 @@ const onOpenUpdateGiftModal = function (data) {
 const onNewGift = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
+  // console.log(data)
   api.newGift(data)
     .then(ui.newGiftSuccess)
     .then(onDisplayGifts)
@@ -51,10 +50,12 @@ const onDeleteGift = function (event) {
 }
 
 const addHandler = function () {
-  $('#new-gift').on('submit', onNewGift)
-  $('#content').on('mousedown', '.gift-update', onOpenUpdateGiftModal)
-  $('body').on('click', '.gift-delete', onDeleteGift)
-  $('#update-gift-content').on('submit', '#update-gift', onUpdateGift)
+
+  $('#content').on('click', '.gift-update', onOpenUpdateGiftModal)
+  $('body').on('mousedown', '.gift-delete', onDeleteGift)
+  $('#updateGiftIdeaModal').on('submit', '#update-gift', onUpdateGift)
+  $('#content').on('click', '#open-new-gift-modal', ui.openNewGiftModal)
+  $('#updateGiftIdeaModal').on('submit', '#add-gift', onNewGift)
 }
 
 module.exports = {
