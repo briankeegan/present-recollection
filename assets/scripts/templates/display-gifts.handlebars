@@ -5,7 +5,7 @@
 <button class="btn btn-success btn-lg" type="button" id="open-new-gift-modal" data-id="{{friend.id}}">New Gift Idea!</button>
 {{#each friend.gifts as |gift|}}
 
-  <div class="row">
+  <div class="row gift-{{gift.id}}">
     <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
       <div class="panel panel-primary">
         <div class="panel-heading">

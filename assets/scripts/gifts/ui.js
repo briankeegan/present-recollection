@@ -60,8 +60,9 @@ const updateGiftFailure = function () {
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
-const deleteGiftSuccess = function () {
+const deleteGiftSuccess = function (id) {
   $('#message').text(`Your're gift has been removed`)
+  $('.gift-' + id).remove()
 }
 
 const deleteGiftFailure = function () {

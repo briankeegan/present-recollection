@@ -43,9 +43,9 @@ const onUpdateGift = function (event) {
 
 const onDeleteGift = function (event) {
   const id = event.target.dataset.id
+  console.log(id)
   api.deleteGift(id)
-    .then(ui.deleteGiftSuccess)
-    .then(onDisplayGifts)
+    .then(() => ui.deleteGiftSuccess(id))
     .catch(ui.deleteGiftFailure)
 }
 
