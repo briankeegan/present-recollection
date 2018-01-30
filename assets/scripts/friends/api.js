@@ -25,7 +25,19 @@ const displayFriends = function () {
   })
 }
 
+const retrieveFriend = function (id) {
+  // console.log('iniside api of retrieveFriend', id)
+  return $.ajax({
+    url: config.apiOrigin + '/friends/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   displayFriends,
-  addFriend
+  addFriend,
+  retrieveFriend
 }

@@ -1,13 +1,14 @@
 'use strict'
 
-const updateFriendModalTemplate = require('../templates/display-friends.handlebars')
+const displayFriendsTemplate = require('../templates/display-friends.handlebars')
 const newFriendFormTemplate = require('../templates/new-friend-form.handlebars')
 const addPopovers = require('../templates/add_popovers.js')
+const updateFriendModalTemplate = require('../templates/update-friend-form.handlebars')
 
 const displayFriendsSuccess = function (data) {
   console.log('inside ui success', data)
-  const showFriendsHTML = updateFriendModalTemplate({ friends: data.friends })
-  $('#content').html(showFriendsHTML)
+  const displayFriendsHTML = displayFriendsTemplate({ friends: data.friends })
+  $('#content').html(displayFriendsHTML)
   addPopovers(data.friends, 'friend')
 }
 
@@ -26,10 +27,21 @@ const addFriendFailure = function () {
 }
 
 const loadNewFriendForm = function (data) {
-  // console.log(data)
+  // console.log('inside loadNewFriendForm', data)
   const newFriendFormHTML = newFriendFormTemplate()
   $('#update-gift-content').html(newFriendFormHTML)
   $('#updateGiftIdeaModal').modal('toggle')
+}
+
+const fillUpdateFriendModal = function (data) {
+  // console.log(data.friend)
+  const updateFriendModalHTML = updateFriendModalTemplate({ friend: data.friend })
+  $('#update-gift-content').html(updateFriendModalHTML)
+  $('#updateGiftIdeaModal').modal('toggle')
+}
+const retrieveFriendFailure = function (e) {
+  $('#message').text('Not sure what went wrong. Unable to retrieve gift')
+  // console.log('ui display error', e)
 }
 
 module.exports = {
@@ -37,5 +49,7 @@ module.exports = {
   displayFriendsFailure,
   loadNewFriendForm,
   addFriendSuccess,
-  addFriendFailure
+  addFriendFailure,
+  fillUpdateFriendModal,
+  retrieveFriendFailure
 }
