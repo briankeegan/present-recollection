@@ -3,7 +3,7 @@
 const displayGiftsTemplate = require('../templates/display-gifts.handlebars')
 const updateGiftModalTemplate = require('../templates/update-gift-modal.handlebars')
 const newGiftModalTemplate = require('../templates/new-gift-form.handlebars')
-// const addPopovers = require('../templates/add_popovers.js')
+const addPopovers = require('../templates/add_popovers.js')
 
 const newGiftSuccess = function (data) {
   $('#updateGiftIdeaModal').modal('toggle')
@@ -24,7 +24,7 @@ const displayGiftSuccess = function (data) {
 
   const showGiftsHTML = displayGiftsTemplate({ friend: data.friend })
   $('#content').html(showGiftsHTML)
-  // popovers
+  addPopovers(data.friend.gifts, 'gift')
 }
 
 const displayGiftFailure = function (e) {
