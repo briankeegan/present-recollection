@@ -1,0 +1,28 @@
+<button class="btn btn-success btn-lg btn-center" type="button" id="new-friend">Add Friend</button>
+
+{{#each friends as |friend|}}
+  <div class="row">
+    <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <span>{{friend.nickname}} </span>
+            <span class="pull-right">{{friend.dob}}</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col col-sm-4 ">
+      <!-- update to icon, and Verical-Align -->
+        <button data-id="{{friend.id}}" type="button" class="btn btn-danger" data-container="body" data-toggle="popover-{{friend.id}}" data-trigger="focus">
+          Delete
+        </button>
+
+        <button data-id="{{friend.id}}" class='friend-update btn btn-warning'>
+          Modify
+        </button>
+
+    </div>
+  </div>
+
+{{/each}}

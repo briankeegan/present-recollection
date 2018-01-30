@@ -2,6 +2,8 @@
 
 const displayGiftsTemplate = require('../templates/display-gifts.handlebars')
 const updateGiftModalTemplate = require('../templates/update-gift-modal.handlebars')
+const updateFriendModalTemplate = require('../templates/display-friends.handlebars')
+const addPopovers = require('../templates/add_popovers.js')
 
 const newGiftSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
@@ -24,7 +26,19 @@ const displayGiftSuccess = function (data) {
 }
 
 const displayGiftFailure = function (e) {
-  $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
+  $('#message').text('Unable to retrieve gifts')
+  // console.log('ui display error', e)
+}
+
+const displayFriendsSuccess = function (friends) {
+  console.log('inside ui success', friends)
+  const showFriendsHTML = updateFriendModalTemplate({ friends: friends })
+  $('#content').html(showFriendsHTML)
+  addPopovers(friends, 'friend')
+}
+
+const displayFriendsFailure = function (e) {
+  $('#message').text('Unable to retrieve friends... Sad day...')
   // console.log('ui display error', e)
 }
 
@@ -77,5 +91,7 @@ module.exports = {
   updateGiftSuccess,
   updateGiftFailure,
   deleteGiftSuccess,
-  deleteGiftFailure
+  deleteGiftFailure,
+  displayFriendsSuccess,
+  displayFriendsFailure
 }

@@ -4,7 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require(`./api`)
 const ui = require(`./ui`)
 const store = require('../store')
-const gift = require('../gifts/events.js')
+const gift = require('../friends/ui.js')
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -26,7 +26,7 @@ const onSignIn = function (event) {
   this.reset()
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(gift.onDisplayGifts)
+    .then(gift.displayFriendsSuccess)
     .catch(ui.signInFailure)
 }
 

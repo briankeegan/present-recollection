@@ -21,7 +21,7 @@ const addPopOverListener = function (gifts) {
 }
 
 const onDisplayGifts = function (event) {
-  console.log(event)
+  // console.log(event)
   api.displayGifts()
     .then(ui.displayGiftSuccess)
     .then(addPopOverListener)
@@ -64,10 +64,15 @@ const onDeleteGift = function (event) {
     .catch(ui.deleteGiftFailure)
 }
 
+const onDeleteFriend = function (event) {
+  console.log('WOrks woot', event)
+}
+
 const addHandler = function () {
   $('#new-gift').on('submit', onNewGift)
   $('#content').on('click', '.gift-update', onOpenUpdateGiftModal)
   $('body').on('click', '.gift-delete', onDeleteGift)
+  $('body').on('click', '.friend-delete', onDeleteFriend)
   $('#update-gift-content').on('submit', '#update-gift', onUpdateGift)
 }
 

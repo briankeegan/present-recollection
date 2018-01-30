@@ -36,6 +36,17 @@ const displayGifts = function () {
   })
 }
 
+const displayFriends = function () {
+  // console.log('dipslay friend API')
+  return $.ajax({
+    url: config.apiOrigin + '/friends',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const retrieveGift = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/gifts/' + id,
@@ -61,5 +72,6 @@ module.exports = {
   displayGifts,
   retrieveGift,
   updateGift,
-  deleteGift
+  deleteGift,
+  displayFriends
 }
