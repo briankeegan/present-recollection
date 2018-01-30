@@ -54,6 +54,7 @@ const addHandler = function () {
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
   $('#content').on('click', 'div.show-gifts', giftEvents.onDisplayGifts)
+  $('#content').on('click', '#load-friends', onDisplayFriends)
 }
 
 module.exports = {
