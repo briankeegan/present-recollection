@@ -29,14 +29,14 @@ const addFriendFailure = function () {
 const loadNewFriendForm = function (data) {
   // console.log('inside loadNewFriendForm', data)
   const newFriendFormHTML = newFriendFormTemplate()
-  $('#update-gift-content').html(newFriendFormHTML)
+  $('#updateGiftIdeaModal').html(newFriendFormHTML)
   $('#updateGiftIdeaModal').modal('toggle')
 }
 
 const fillUpdateFriendModal = function (data) {
   // console.log(data.friend)
   const updateFriendModalHTML = updateFriendModalTemplate({ friend: data.friend })
-  $('#update-gift-content').html(updateFriendModalHTML)
+  $('#updateGiftIdeaModal').html(updateFriendModalHTML)
   $('#updateGiftIdeaModal').modal('toggle')
 }
 const retrieveFriendFailure = function (e) {
@@ -46,13 +46,13 @@ const retrieveFriendFailure = function (e) {
 
 const updateFriendSuccess = function (data) {
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#update-gift-content').html('')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text(`You're Friend has been updated`)
 }
 
 const updateFriendFailure = function () {
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#update-gift-content').html('')
+  $('#updateGiftIdeaModal').html('')
   $('#message').text(`Unable to update Friend. They're perfect the way they are!`)
 }
 

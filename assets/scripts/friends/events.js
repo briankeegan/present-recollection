@@ -50,9 +50,9 @@ const onUpdateFriend = function (event) {
 const addHandler = function () {
   $('body').on('mousedown', '.friend-delete', onDeleteFriend)
   $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
-  $('#update-gift-content').on('submit', '#add-friend', onAddFriend)
+  $('#updateGiftIdeaModal').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
-  $('#update-gift-content').on('submit', '#update-friend', onUpdateFriend)
+  $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
   $('#content').on('click', 'div.show-gifts', giftEvents.onDisplayGifts)
 }
 
