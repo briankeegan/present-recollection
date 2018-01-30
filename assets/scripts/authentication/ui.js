@@ -22,7 +22,7 @@ const signInSuccess = function (data) {
   $('#message').text('Welcom ' + store.user.email + '!')
   $('.after-sign-in').css('display', 'block')
   $('.inital-page').css('display', 'none')
-  return data.user.friends
+  return data.user
 }
 
 const signInFailure = function (e) {

@@ -20,7 +20,7 @@ const addPopOverListener = function (gifts) {
   })
 }
 
-const onDisplayGifts = function (event) {
+const onDisplayGifts = function () {
   // console.log(event)
   api.displayGifts()
     .then(ui.displayGiftSuccess)
@@ -39,7 +39,6 @@ const onOpenUpdateGiftModal = function (data) {
 const onNewGift = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  this.reset()
   api.newGift(data)
     .then(ui.newGiftSuccess)
     .then(onDisplayGifts)

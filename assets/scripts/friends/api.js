@@ -2,6 +2,18 @@
 const store = require('../store')
 const config = require('../config')
 
+const addFriend = function (data) {
+  // console.log(data)
+  return $.ajax({
+    url: config.apiOrigin + '/friends',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const displayFriends = function () {
   // console.log('dipslay friend API')
   return $.ajax({
@@ -14,5 +26,6 @@ const displayFriends = function () {
 }
 
 module.exports = {
-  displayFriends
+  displayFriends,
+  addFriend
 }
