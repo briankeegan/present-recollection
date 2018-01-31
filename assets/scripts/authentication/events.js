@@ -22,11 +22,11 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   // console.log('Events!')
-  this.reset()
+  // this.reset()
   api.signIn(data)
     .then(ui.signInSuccess)
     .then(gift.displayFriendsSuccess)
-    .catch(ui.signInFailure)
+    .catch(() => ui.signInFailure(this))
 }
 
 const onChangePassword = function (event) {
@@ -57,14 +57,16 @@ const onLogout = function (event) {
   }
 }
 const onOpenSignUpModal = () => ui.openSignUpModal()
-const onOpenChangePasswordModal = () => ui.onOpenChangePasswordModal()
+const onOpenChangePasswordModal = () => ui.openChangePasswordModal()
+const onOpenSignInModal = () => ui.openSignInModal()
 
 const addHandler = function () {
   $('#present-recollection-modal').on('submit', '#sign-up', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
+  $('#present-recollection-modal').on('submit', '#sign-in', onSignIn)
   $('#present-recollection-modal').on('submit', '#change-password', onChangePassword)
   $('#logout').on('click', onLogout)
   $('#open-sign-up-modal').on('click', onOpenSignUpModal)
+  $('#open-sign-in-modal').on('click', onOpenSignInModal)
   $('#open-change-password-modal').on('click', onOpenChangePasswordModal)
   $('#present-recollection-modal').on('shown.bs.modal', function (e) {
     $(e.target).find('input')[0].focus()

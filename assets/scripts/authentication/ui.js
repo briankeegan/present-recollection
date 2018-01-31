@@ -3,6 +3,7 @@
 const store = require('../store')
 const mainPageTemplate = require('../templates/mainpage.handlebars')
 const signUpTemplate = require('../templates/sign-up.handlebars')
+const signInTemplate = require('../templates/sign-in.handlebars')
 const changePasswordTemplate = require('../templates/change-pw.handlebars')
 
 const signUpSuccess = function (that) {
@@ -35,14 +36,18 @@ const signUpFailure = function (that) {
 const signInSuccess = function (data) {
   store.user = data.user
   $('.navbar-collapse').collapse('hide')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text('Welcom ' + store.user.email + '!')
   $('.after-sign-in').css('display', 'block')
   $('.inital-page').css('display', 'none')
   return data.user
 }
 
-const signInFailure = function (e) {
-  $('#message').text('Invalid username or password')
+const signInFailure = function (that) {
+  that.reset()
+  formFocus(that)
+  $('#modal-message').text('Invalid username or password')
 }
 
 const changePasswordSuccess = function (that) {
@@ -73,22 +78,17 @@ const logoutFailure = function () {
 }
 
 const openSignUpModal = function () {
-  return new Promise((resolve, reject) => {
-    const signUpHTML = signUpTemplate()
-    $('#present-recollection-modal').html(signUpHTML)
-    $('#present-recollection-modal').modal('toggle')
-    while (document.getElementById('sign-up') === null) {
-      console.log('missin the point')
-      resolve('#sign-up')
-    }
-  })
+  const signUpHTML = signUpTemplate()
+  $('#present-recollection-modal').html(signUpHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
-// const openSignUpModal = function () {
-//   const signUpHTML = signUpTemplate()
-//   $('#present-recollection-modal').html(signUpHTML)
-//   $('#present-recollection-modal').modal('toggle')
-// }
-const onOpenChangePasswordModal = function () {
+
+const openSignInModal = function () {
+  const signInHTML = signInTemplate()
+  $('#present-recollection-modal').html(signInHTML)
+  $('#present-recollection-modal').modal('toggle')
+}
+const openChangePasswordModal = function () {
   const changePasswordHTML = changePasswordTemplate()
   $('#present-recollection-modal').html(changePasswordHTML)
   $('#present-recollection-modal').modal('toggle')
@@ -102,9 +102,10 @@ const formFocus = function (form) {
 module.exports = {
   signUpSuccess,
   signUpFailure,
+  openSignInModal,
   signInSuccess,
   signInFailure,
-  onOpenChangePasswordModal,
+  openChangePasswordModal,
   changePasswordSuccess,
   changePasswordFailure,
   logoutSuccess,
