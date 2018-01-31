@@ -29,7 +29,7 @@ const addFriendFailure = function () {
   $('#message').text('Unable to add friends... Maybe you\'re not that close?')
 }
 
-const loadNewFriendForm = function (data) {
+const loadNewFriendForm = function () {
   // console.log('inside loadNewFriendForm', data)
   const newFriendFormHTML = newFriendFormTemplate()
   $('#updateGiftIdeaModal').html(newFriendFormHTML)

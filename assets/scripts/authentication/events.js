@@ -9,13 +9,12 @@ const gift = require('../friends/ui.js')
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  this.reset()
   if (data.credentials.password === data.credentials.password_confirmation) {
     api.signUp(data)
-      .then(ui.signUpSuccess)
-      .catch(ui.signUpFailure)
+      .then(() => ui.signUpSuccess(this))
+      .catch(() => ui.signUpFailure(this))
   } else {
-    ui.signUpFailure()
+    ui.signUpPasswordMismatch(this)
   }
 }
 
@@ -54,11 +53,16 @@ const onLogout = function (event) {
     ui.logoutFailure()
   }
 }
+const onOpenSignUpModal = function () {
+  ui.openSignUpModal()
+    .then(ui.formFocus)
+}
 const addHandler = function () {
-  $('#sign-up').on('submit', onSignUp)
+  $('#updateGiftIdeaModal').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#logout').on('click', onLogout)
+  $('#open-sign-up-modal').on('click', onOpenSignUpModal)
 }
 
 module.exports = {
