@@ -19,6 +19,13 @@ const passwordMismatch = function (that) {
   $('#modal-message').text('Passwords don\'t match')
 }
 
+const sameAsOld = function (that) {
+  that.reset()
+  // focus on first input after reset!
+  formFocus(that)
+  $('#modal-message').text('You\'re new passwords are the same as old. No change possible.')
+}
+
 const signUpFailure = function (that) {
   that.reset()
   formFocus(that)
@@ -104,5 +111,6 @@ module.exports = {
   logoutFailure,
   openSignUpModal,
   passwordMismatch,
+  sameAsOld,
   formFocus
 }

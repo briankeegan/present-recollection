@@ -34,6 +34,9 @@ const onChangePassword = function (event) {
   event.preventDefault()
   this.reset()
   if (data.passwords.new === data.passwords['new-retyped']) {
+    if (data.passwords.new === data.passwords.old) {
+      return ui.sameAsOld(this)
+    }
     api.changePassword(data)
       .then(() => ui.changePasswordSuccess(this))
       .catch(() => ui.changePasswordFailure(this))
@@ -55,6 +58,7 @@ const onLogout = function (event) {
 }
 const onOpenSignUpModal = () => ui.openSignUpModal()
 const onOpenChangePasswordModal = () => ui.onOpenChangePasswordModal()
+
 const addHandler = function () {
   $('#present-recollection-modal').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
