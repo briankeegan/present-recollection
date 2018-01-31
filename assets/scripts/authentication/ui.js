@@ -3,6 +3,7 @@
 const store = require('../store')
 const mainPageTemplate = require('../templates/mainpage.handlebars')
 const signUpTemplate = require('../templates/sign-up.handlebars')
+const changePasswordTemplate = require('../templates/change-pw.handlebars')
 
 const signUpSuccess = function (that) {
   // $('.navbar-collapse').collapse('hide')
@@ -11,7 +12,7 @@ const signUpSuccess = function (that) {
   $('#message').text('Successfully signed up!')
 }
 
-const signUpPasswordMismatch = function (that) {
+const passwordMismatch = function (that) {
   that.reset()
   // focus on first input after reset!
   formFocus(that)
@@ -36,18 +37,17 @@ const signInFailure = function (e) {
   $('#message').text('Invalid username or password')
 }
 
-const changePasswordSuccess = function (data) {
-  $('#changePasswordModal').modal('toggle')
+const changePasswordSuccess = function (that) {
+  that.reset()
   $('.navbar-collapse').collapse('hide')
+  $('#updateGiftIdeaModal').modal('toggle')
   $('#message').text('Your password was updated!')
 }
 
-const changePasswordFailure = function (error) {
-  if (error) {
-    $('#message').text('Error changing password')
-  } else {
-    $('#message').text('Passwords don\'t match')
-  }
+const changePasswordFailure = function (that) {
+  that.reset()
+  formFocus(that)
+  $('#modal-message').text('Error changing password.')
 }
 
 const logoutSuccess = function () {
@@ -80,6 +80,11 @@ const openSignUpModal = function () {
 //   $('#updateGiftIdeaModal').html(signUpHTML)
 //   $('#updateGiftIdeaModal').modal('toggle')
 // }
+const onOpenChangePasswordModal = function () {
+  const changePasswordHTML = changePasswordTemplate()
+  $('#updateGiftIdeaModal').html(changePasswordHTML)
+  $('#updateGiftIdeaModal').modal('toggle')
+}
 
 const formFocus = function (form) {
   console.log(form)
@@ -89,13 +94,14 @@ const formFocus = function (form) {
 module.exports = {
   signUpSuccess,
   signUpFailure,
-  signUpPasswordMismatch,
   signInSuccess,
   signInFailure,
+  onOpenChangePasswordModal,
   changePasswordSuccess,
   changePasswordFailure,
   logoutSuccess,
   logoutFailure,
   openSignUpModal,
+  passwordMismatch,
   formFocus
 }

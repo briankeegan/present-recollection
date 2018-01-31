@@ -35,10 +35,10 @@ const onChangePassword = function (event) {
   this.reset()
   if (data.passwords.new === data.passwords['new-retyped']) {
     api.changePassword(data)
-      .then(ui.changePasswordSuccess)
-      .catch(ui.changePasswordFailure)
+      .then(() => ui.changePasswordSuccess(this))
+      .catch(() => ui.changePasswordFailure(this))
   } else {
-    ui.changePasswordFailure()
+    ui.passwordMismatch(this)
   }
 }
 
@@ -55,14 +55,20 @@ const onLogout = function (event) {
 }
 const onOpenSignUpModal = function () {
   ui.openSignUpModal()
-    .then(ui.formFocus)
+}
+const onOpenChangePasswordModal = function () {
+  ui.onOpenChangePasswordModal()
 }
 const addHandler = function () {
   $('#updateGiftIdeaModal').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#change-password').on('submit', onChangePassword)
+  $('#updateGiftIdeaModal').on('submit', '#change-password', onChangePassword)
   $('#logout').on('click', onLogout)
   $('#open-sign-up-modal').on('click', onOpenSignUpModal)
+  $('#open-change-password-modal').on('click', onOpenChangePasswordModal)
+  $('#updateGiftIdeaModal').on('shown.bs.modal', function (e) {
+    ($(e.target).find('input')[0]).focus()
+  })
 }
 
 module.exports = {
