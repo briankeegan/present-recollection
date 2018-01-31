@@ -60,7 +60,7 @@ const addHandler = function () {
   $('#updateGiftIdeaModal').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
-  $('#content').on('click', 'div.show-gifts', onClickFriend)
+  $('#content').on('click', '.show-gifts', onClickFriend)
   $('#content').on('click', '#load-friends', onDisplayFriends)
 }
 

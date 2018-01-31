@@ -65,6 +65,7 @@ const addHandler = function () {
   $('#updateGiftIdeaModal').on('shown.bs.modal', function (e) {
     $(e.target).find('input')[0].focus()
   })
+  $('main').on('click', () => $('.navbar-collapse').collapse('hide'))
 }
 
 module.exports = {

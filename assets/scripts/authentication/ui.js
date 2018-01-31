@@ -6,7 +6,7 @@ const signUpTemplate = require('../templates/sign-up.handlebars')
 const changePasswordTemplate = require('../templates/change-pw.handlebars')
 
 const signUpSuccess = function (that) {
-  // $('.navbar-collapse').collapse('hide')
+  $('.navbar-collapse').collapse('hide')
   that.reset()
   $('#updateGiftIdeaModal').modal('toggle')
   $('#message').text('Successfully signed up!')
@@ -27,6 +27,7 @@ const signUpFailure = function (that) {
 
 const signInSuccess = function (data) {
   store.user = data.user
+  $('.navbar-collapse').collapse('hide')
   $('#message').text('Welcom ' + store.user.email + '!')
   $('.after-sign-in').css('display', 'block')
   $('.inital-page').css('display', 'none')
