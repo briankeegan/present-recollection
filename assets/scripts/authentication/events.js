@@ -14,7 +14,7 @@ const onSignUp = function (event) {
       .then(() => ui.signUpSuccess(this))
       .catch(() => ui.signUpFailure(this))
   } else {
-    ui.signUpPasswordMismatch(this)
+    ui.passwordMismatch(this)
   }
 }
 
@@ -53,12 +53,8 @@ const onLogout = function (event) {
     ui.logoutFailure()
   }
 }
-const onOpenSignUpModal = function () {
-  ui.openSignUpModal()
-}
-const onOpenChangePasswordModal = function () {
-  ui.onOpenChangePasswordModal()
-}
+const onOpenSignUpModal = () => ui.openSignUpModal()
+const onOpenChangePasswordModal = () => ui.onOpenChangePasswordModal()
 const addHandler = function () {
   $('#updateGiftIdeaModal').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -67,7 +63,7 @@ const addHandler = function () {
   $('#open-sign-up-modal').on('click', onOpenSignUpModal)
   $('#open-change-password-modal').on('click', onOpenChangePasswordModal)
   $('#updateGiftIdeaModal').on('shown.bs.modal', function (e) {
-    ($(e.target).find('input')[0]).focus()
+    $(e.target).find('input')[0].focus()
   })
 }
 

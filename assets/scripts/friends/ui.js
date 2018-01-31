@@ -17,15 +17,15 @@ const displayFriendsFailure = function (e) {
   // console.log('ui display error', e)
 }
 
-const addFriendSuccess = function () {
+const addFriendSuccess = function (that) {
+  that.reset()
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
   $('#message').text('You added a new friend!')
 }
 
-const addFriendFailure = function () {
+const addFriendFailure = function (that) {
+  that.reset()
   $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
   $('#message').text('Unable to add friends... Maybe you\'re not that close?')
 }
 

@@ -17,9 +17,9 @@ const onAddFriend = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   api.addFriend(data)
-    .then(ui.addFriendSuccess)
+    .then(() => ui.addFriendSuccess(this))
     .then(onDisplayFriends)
-    .catch(ui.addFriendFailure)
+    .catch(() => ui.addFriendFailure(this))
 }
 
 const onDisplayFriends = function (event) {
@@ -52,9 +52,11 @@ const onClickFriend = function (event) {
   giftEvents.onDisplayGifts(id)
 }
 
+const onLoadNewFriendForm = () => ui.loadNewFriendForm()
+
 const addHandler = function () {
   $('body').on('mousedown', '.friend-delete', onDeleteFriend)
-  $('#content').on('click', '#new-friend', ui.loadNewFriendForm)
+  $('#content').on('click', '#new-friend', onLoadNewFriendForm)
   $('#updateGiftIdeaModal').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
