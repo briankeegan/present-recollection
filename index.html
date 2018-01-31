@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Present Recollection</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Present Recollection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <!-- navbar -->
-      <nav class="nav container-fluid">
-        <a class="navbar-brand" href="#">Present Recollection</a>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#" class="inital-page" id="open-sign-in-modal" >
-              Sign In
-            </a></li>
-            <li><a href="#" class="inital-page" id="open-sign-up-modal" >
-              Sign Up
-            </a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle after-sign-in" data-toggle="dropdown" href="#">
-              Account
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="#" id="open-change-password-modal" >Change Password</a></li>
-              <li class="divider"></li>
-              <li><a href="#" id="logout">Logout</a></li>
-            </ul>
-          </li>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-          <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
-        </ul>
-      </nav>
-<!-- main content -->
-      <main class="container-fluid">
-        <div class="container message-container">
-          <h1 class="message" id="message">
+<body>
+  <!-- navbar -->
+  <nav class="nav container-fluid">
+    <a class="navbar-brand" href="#">Present Recollection</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" class="inital-page" id="open-sign-in-modal">
+        Sign In
+      </a></li>
+      <li><a href="#" class="inital-page" id="open-sign-up-modal">
+        Sign Up
+      </a></li>
+      <li><a href="#" class="after-sign-in" id="open-change-password-modal">Password</a></li>
+      <li><a href="#" class="after-sign-in" id="logout">Logout</a></li>
+      <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+    </ul>
+  </nav>
+  <!-- main content -->
+  <main class="container-fluid">
+    <div class="container message-container">
+      <h1 class="message" id="message">
             <!-- Message goes here -->
             Hey there!
           </h1>
-        </div>
-        <div class="container-fluid" id="content"></div>
-        <!-- Modals -->
+    </div>
+    <div class="container-fluid" id="content"></div>
+    <!-- Modals -->
 
-<!-- present-recollection-modal -->
-        <div class="modal fade" id="present-recollection-modal" tabindex="-1" role="dialog" aria-labelledby="present-recollection-modal" aria-hidden="true">
-          <!-- <div id="update-gift-content"></div> -->
-        </div>
-<!-- aboutModal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title">Present Recollection</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <!-- present-recollection-modal -->
+    <div class="modal fade" id="present-recollection-modal" tabindex="-1" role="dialog" aria-labelledby="present-recollection-modal" aria-hidden="true">
+      <!-- <div id="update-gift-content"></div> -->
+    </div>
+    <!-- aboutModal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title">Present Recollection</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
                     </button>
-              </div>
-              <div class="modal-body">
-                <p>***ADD CONTENT***</p>
-                <p>If you would like to learn more about my process please checkout the <a href="https://github.com/briankeegan/present-recollection/blob/master/README.md" target="_blank">README.md</a> section for <a href="https://github.com/briankeegan/present-recollection" target="_blank">this repo</a> on <a href="https://github.com/briankeegan/" target="_blank">my github</a> page!</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
+          </div>
+          <div class="modal-body">
+            <p>***ADD CONTENT***</p>
+            <p>If you would like to learn more about my process please checkout the <a href="https://github.com/briankeegan/present-recollection/blob/master/README.md" target="_blank">README.md</a> section for <a href="https://github.com/briankeegan/present-recollection"
+                target="_blank">this repo</a> on <a href="https://github.com/briankeegan/" target="_blank">my github</a> page!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           </div>
         </div>
+      </div>
+    </div>
 
-      </main>
+  </main>
 
 
-    </body>
+</body>
+
 </html>
