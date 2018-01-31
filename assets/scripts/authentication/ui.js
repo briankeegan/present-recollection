@@ -95,7 +95,7 @@ const openChangePasswordModal = function () {
 }
 
 const formFocus = function (form) {
-  console.log(form)
+  // console.log(form)
   $(form).find('input')[0].focus()
 }
 

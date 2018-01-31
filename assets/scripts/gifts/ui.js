@@ -20,8 +20,6 @@ const newGiftFailure = function (e) {
 }
 
 const displayGiftSuccess = function (data) {
-  console.log('inside ui success', data.friend.nickname)
-
   const showGiftsHTML = displayGiftsTemplate({ friend: data.friend })
   $('#content').html(showGiftsHTML)
   addPopovers(data.friend.gifts, 'gift')
@@ -33,7 +31,6 @@ const displayGiftFailure = function (e) {
 }
 
 const retrieveGiftSuccess = function (data) {
-  console.log('inside ui success', data)
   // console.log(data.gifts)
 }
 
@@ -74,7 +71,7 @@ const deleteGiftFailure = function () {
 
 const openNewGiftModal = function (data) {
   const friendId = data.target.dataset.id
-  console.log(friendId)
+  // console.log(friendId)
   const newGiftModalHTML = newGiftModalTemplate({friendId: friendId})
   $('#present-recollection-modal').html(newGiftModalHTML)
   $('#present-recollection-modal').modal('toggle')

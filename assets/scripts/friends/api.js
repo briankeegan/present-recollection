@@ -3,7 +3,6 @@ const store = require('../store')
 const config = require('../config')
 
 const addFriend = function (data) {
-  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/friends',
     method: 'POST',
@@ -15,7 +14,6 @@ const addFriend = function (data) {
 }
 
 const displayFriends = function () {
-  // console.log('dipslay friend API')
   return $.ajax({
     url: config.apiOrigin + '/friends',
     method: 'GET',
@@ -26,7 +24,6 @@ const displayFriends = function () {
 }
 
 const retrieveFriend = function (id) {
-  console.log('iniside api of retrieveFriend', id)
   return $.ajax({
     url: config.apiOrigin + '/friends/' + id,
     method: 'GET',
@@ -37,7 +34,6 @@ const retrieveFriend = function (id) {
 }
 
 const updateFriend = function (data) {
-  // console.log('update friend', data)
   return $.ajax({
     url: config.apiOrigin + '/friends/' + data.friend.id,
     method: 'PATCH',
@@ -49,7 +45,6 @@ const updateFriend = function (data) {
 }
 
 const deleteFriend = function (id) {
-  // console.log('Inside friendapi', id)
   return $.ajax({
     url: config.apiOrigin + '/friends/' + id,
     method: 'DELETE',

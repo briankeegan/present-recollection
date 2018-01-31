@@ -30,7 +30,6 @@ const onDisplayFriends = function (event) {
 
 const onOpenUpdateFriendModal = function (data) {
   const id = data.target.dataset.id
-  // console.log(id)
   api.retrieveFriend(id)
     .then(ui.fillUpdateFriendModal)
     .catch(ui.retrieveFriendFailure)
@@ -40,7 +39,6 @@ const onUpdateFriend = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   this.reset()
-  // console.log(data)
   api.updateFriend(data)
     .then(ui.updateFriendSuccess)
     .then(onDisplayFriends)

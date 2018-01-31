@@ -7,7 +7,6 @@ const ui = require(`./ui`)
 const friendApi = require('../friends/api.js')
 
 const onDisplayGifts = function (id) {
-  console.log('herhehrerhe')
   friendApi.retrieveFriend(id)
     .then(ui.displayGiftSuccess)
     .catch(ui.displayGiftFailure)
@@ -15,7 +14,6 @@ const onDisplayGifts = function (id) {
 
 const onOpenUpdateGiftModal = function (data) {
   const id = data.target.dataset.id
-  console.log(id)
   api.retrieveGift(id)
     .then(ui.fillUpdateGiftModal)
     .catch(ui.retrieveGiftFailure)
@@ -24,7 +22,6 @@ const onOpenUpdateGiftModal = function (data) {
 const onNewGift = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  // console.log(data)
   api.newGift(data)
     .then(ui.newGiftSuccess)
     .then(onDisplayGifts)
@@ -35,7 +32,6 @@ const onUpdateGift = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   this.reset()
-  console.log(data)
   api.updateGift(data)
     .then(ui.updateGiftSuccess)
     .then(onDisplayGifts)
@@ -44,7 +40,6 @@ const onUpdateGift = function (event) {
 
 const onDeleteGift = function (event) {
   const id = event.target.dataset.id
-  console.log(id)
   api.deleteGift(id)
     .then(() => ui.deleteGiftSuccess(id))
     .catch(ui.deleteGiftFailure)

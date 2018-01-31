@@ -21,8 +21,6 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  // console.log('Events!')
-  // this.reset()
   api.signIn(data)
     .then(ui.signInSuccess)
     .then(gift.displayFriendsSuccess)
@@ -68,10 +66,6 @@ const addHandler = function () {
   $('#open-sign-up-modal').on('click', onOpenSignUpModal)
   $('#open-sign-in-modal').on('click', onOpenSignInModal)
   $('#open-change-password-modal').on('click', onOpenChangePasswordModal)
-  $('#present-recollection-modal').on('shown.bs.modal', function (e) {
-    $(e.target).find('input')[0].focus()
-  })
-  $('main').on('click', () => $('.navbar-collapse').collapse('hide'))
 }
 
 module.exports = {
