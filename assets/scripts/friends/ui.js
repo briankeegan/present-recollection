@@ -19,28 +19,28 @@ const displayFriendsFailure = function (e) {
 
 const addFriendSuccess = function (that) {
   that.reset()
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').modal('toggle')
   $('#message').text('You added a new friend!')
 }
 
 const addFriendFailure = function (that) {
   that.reset()
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').modal('toggle')
   $('#message').text('Unable to add friends... Maybe you\'re not that close?')
 }
 
 const loadNewFriendForm = function () {
   // console.log('inside loadNewFriendForm', data)
   const newFriendFormHTML = newFriendFormTemplate()
-  $('#updateGiftIdeaModal').html(newFriendFormHTML)
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').html(newFriendFormHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
 
 const fillUpdateFriendModal = function (data) {
   // console.log(data.friend)
   const updateFriendModalHTML = updateFriendModalTemplate({ friend: data.friend })
-  $('#updateGiftIdeaModal').html(updateFriendModalHTML)
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').html(updateFriendModalHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
 const retrieveFriendFailure = function (e) {
   $('#message').text('Not sure what went wrong. Unable to retrieve gift')
@@ -48,14 +48,14 @@ const retrieveFriendFailure = function (e) {
 }
 
 const updateFriendSuccess = function (data) {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text(`You're Friend has been updated`)
 }
 
 const updateFriendFailure = function () {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text(`Unable to update Friend. They're perfect the way they are!`)
 }
 

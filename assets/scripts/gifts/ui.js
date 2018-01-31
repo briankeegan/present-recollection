@@ -6,15 +6,15 @@ const newGiftModalTemplate = require('../templates/new-gift-form.handlebars')
 const addPopovers = require('../templates/add_popovers.js')
 
 const newGiftSuccess = function (data) {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text('You created a gift!')
   // return in order to display gifts!
   return data.gift.friend_id
 }
 const newGiftFailure = function (e) {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
   // console.log('Error in creation', e)
 }
@@ -45,21 +45,21 @@ const retrieveGiftFailure = function (e) {
 const fillUpdateGiftModal = function (data) {
   console.log(data)
   const updateGiftModalHTML = updateGiftModalTemplate({ gift: data.gift })
-  $('#updateGiftIdeaModal').html(updateGiftModalHTML)
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').html(updateGiftModalHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
 
 const updateGiftSuccess = function (data) {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text(`Your're gift has been updated`)
   // return in order to display gifts!
   return data.gift.friend_id
 }
 
 const updateGiftFailure = function () {
-  $('#updateGiftIdeaModal').modal('toggle')
-  $('#updateGiftIdeaModal').html('')
+  $('#present-recollection-modal').modal('toggle')
+  $('#present-recollection-modal').html('')
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
@@ -76,8 +76,8 @@ const openNewGiftModal = function (data) {
   const friendId = data.target.dataset.id
   console.log(friendId)
   const newGiftModalHTML = newGiftModalTemplate({friendId: friendId})
-  $('#updateGiftIdeaModal').html(newGiftModalHTML)
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').html(newGiftModalHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
 
 module.exports = {

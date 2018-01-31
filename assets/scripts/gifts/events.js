@@ -53,9 +53,9 @@ const onDeleteGift = function (event) {
 const addHandler = function () {
   $('#content').on('click', '.gift-update', onOpenUpdateGiftModal)
   $('body').on('mousedown', '.gift-delete', onDeleteGift)
-  $('#updateGiftIdeaModal').on('submit', '#update-gift', onUpdateGift)
+  $('#present-recollection-modal').on('submit', '#update-gift', onUpdateGift)
   $('#content').on('click', '#open-new-gift-modal', ui.openNewGiftModal)
-  $('#updateGiftIdeaModal').on('submit', '#add-gift', onNewGift)
+  $('#present-recollection-modal').on('submit', '#add-gift', onNewGift)
 }
 
 module.exports = {

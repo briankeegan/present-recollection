@@ -56,13 +56,13 @@ const onLogout = function (event) {
 const onOpenSignUpModal = () => ui.openSignUpModal()
 const onOpenChangePasswordModal = () => ui.onOpenChangePasswordModal()
 const addHandler = function () {
-  $('#updateGiftIdeaModal').on('submit', '#sign-up', onSignUp)
+  $('#present-recollection-modal').on('submit', '#sign-up', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#updateGiftIdeaModal').on('submit', '#change-password', onChangePassword)
+  $('#present-recollection-modal').on('submit', '#change-password', onChangePassword)
   $('#logout').on('click', onLogout)
   $('#open-sign-up-modal').on('click', onOpenSignUpModal)
   $('#open-change-password-modal').on('click', onOpenChangePasswordModal)
-  $('#updateGiftIdeaModal').on('shown.bs.modal', function (e) {
+  $('#present-recollection-modal').on('shown.bs.modal', function (e) {
     $(e.target).find('input')[0].focus()
   })
   $('main').on('click', () => $('.navbar-collapse').collapse('hide'))

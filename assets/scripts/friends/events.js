@@ -57,9 +57,9 @@ const onLoadNewFriendForm = () => ui.loadNewFriendForm()
 const addHandler = function () {
   $('body').on('mousedown', '.friend-delete', onDeleteFriend)
   $('#content').on('click', '#new-friend', onLoadNewFriendForm)
-  $('#updateGiftIdeaModal').on('submit', '#add-friend', onAddFriend)
+  $('#present-recollection-modal').on('submit', '#add-friend', onAddFriend)
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
-  $('#updateGiftIdeaModal').on('submit', '#update-friend', onUpdateFriend)
+  $('#present-recollection-modal').on('submit', '#update-friend', onUpdateFriend)
   $('#content').on('click', '.show-gifts', onClickFriend)
   $('#content').on('click', '#load-friends', onDisplayFriends)
 }

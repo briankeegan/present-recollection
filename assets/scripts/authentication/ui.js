@@ -8,7 +8,7 @@ const changePasswordTemplate = require('../templates/change-pw.handlebars')
 const signUpSuccess = function (that) {
   $('.navbar-collapse').collapse('hide')
   that.reset()
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').modal('toggle')
   $('#message').text('Successfully signed up!')
 }
 
@@ -41,7 +41,7 @@ const signInFailure = function (e) {
 const changePasswordSuccess = function (that) {
   that.reset()
   $('.navbar-collapse').collapse('hide')
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').modal('toggle')
   $('#message').text('Your password was updated!')
 }
 
@@ -68,8 +68,8 @@ const logoutFailure = function () {
 const openSignUpModal = function () {
   return new Promise((resolve, reject) => {
     const signUpHTML = signUpTemplate()
-    $('#updateGiftIdeaModal').html(signUpHTML)
-    $('#updateGiftIdeaModal').modal('toggle')
+    $('#present-recollection-modal').html(signUpHTML)
+    $('#present-recollection-modal').modal('toggle')
     while (document.getElementById('sign-up') === null) {
       console.log('missin the point')
       resolve('#sign-up')
@@ -78,13 +78,13 @@ const openSignUpModal = function () {
 }
 // const openSignUpModal = function () {
 //   const signUpHTML = signUpTemplate()
-//   $('#updateGiftIdeaModal').html(signUpHTML)
-//   $('#updateGiftIdeaModal').modal('toggle')
+//   $('#present-recollection-modal').html(signUpHTML)
+//   $('#present-recollection-modal').modal('toggle')
 // }
 const onOpenChangePasswordModal = function () {
   const changePasswordHTML = changePasswordTemplate()
-  $('#updateGiftIdeaModal').html(changePasswordHTML)
-  $('#updateGiftIdeaModal').modal('toggle')
+  $('#present-recollection-modal').html(changePasswordHTML)
+  $('#present-recollection-modal').modal('toggle')
 }
 
 const formFocus = function (form) {
