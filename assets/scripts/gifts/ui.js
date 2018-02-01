@@ -38,7 +38,7 @@ const retrieveGiftFailure = function (e) {
 }
 
 const fillUpdateGiftModal = function (data) {
-  console.log(data)
+  // console.log(data)
   const updateGiftModalHTML = updateGiftModalTemplate({ gift: data.gift })
   $('#present-recollection-modal').html(updateGiftModalHTML)
   $('#present-recollection-modal').modal('toggle')
