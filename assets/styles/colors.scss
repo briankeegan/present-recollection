@@ -7,6 +7,9 @@ $color5: rgba(119, 104, 174, 1);
 $color6: rgba(119, 104, 174, .9);
 $color7: rgba(128, 206, 215, .9);
 
+$color8: rgba(237, 106, 94, 1); //error
+
+
 body {
   background-color: $color4;
   color: $color1;
@@ -28,4 +31,13 @@ footer {
       color: darken($color3, 25%);
     }
   }
+}
+
+#modal-message {
+  color: $color8;
+  padding-right: 40px;
+}
+
+.friends-gifts {
+  color: $color5;
 }

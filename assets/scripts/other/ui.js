@@ -1,6 +1,7 @@
 'use strict'
 
 const aboutTemplate = require('../templates/about.handlebars')
+const mainTemplate = require('../templates/mainpage.handlebars')
 
 const openAboutModal = function () {
   const aboutHTML = aboutTemplate()
@@ -16,8 +17,19 @@ const focusInput = function (e) {
     $(e.target).find('input')[0].focus()
 }
 
+const loadContent = function () {
+  const mainHTML = mainTemplate()
+  $('#content').html(mainHTML)
+}
+
+const removeContent = function () {
+  $('#present-recollection-modal').html('')
+}
+
 module.exports = {
   openAboutModal,
-  focusInput
+  focusInput,
+  loadContent,
+  removeContent
 
 }

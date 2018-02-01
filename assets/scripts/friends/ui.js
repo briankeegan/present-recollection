@@ -17,10 +17,10 @@ const displayFriendsFailure = function (e) {
   // console.log('ui display error', e)
 }
 
-const addFriendSuccess = function (that) {
-  that.reset()
+const addFriendSuccess = function (data) {
+  const friend = data.friend.nickname
   $('#present-recollection-modal').modal('toggle')
-  $('#message').text('You added a new friend!')
+  $('#message').text(`Click on a ${friend} to add gift ideas`)
 }
 
 const addFriendFailure = function (that) {
@@ -49,13 +49,11 @@ const retrieveFriendFailure = function (e) {
 
 const updateFriendSuccess = function (data) {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
   $('#message').text(`You're Friend has been updated`)
 }
 
 const updateFriendFailure = function () {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
   $('#message').text(`Unable to update Friend. They're perfect the way they are!`)
 }
 

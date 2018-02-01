@@ -7,14 +7,12 @@ const addPopovers = require('../templates/add_popovers.js')
 
 const newGiftSuccess = function (data) {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
-  $('#message').text('You created a gift!')
+  $('#message').text(`${data.gift.gift_idea}!  What a great idea!`)
   // return in order to display gifts!
   return data.gift.friend_id
 }
 const newGiftFailure = function (e) {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
   $('#message').text('Unable to create gift.  Maybe it was a bad idea?')
   // console.log('Error in creation', e)
 }
@@ -48,20 +46,18 @@ const fillUpdateGiftModal = function (data) {
 
 const updateGiftSuccess = function (data) {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
-  $('#message').text(`Your're gift has been updated`)
+  $('#message').text(`Your gift has been updated`)
   // return in order to display gifts!
   return data.gift.friend_id
 }
 
 const updateGiftFailure = function () {
   $('#present-recollection-modal').modal('toggle')
-  $('#present-recollection-modal').html('')
   $('#message').text(`Unable to update gift. It's perfect the way it is!`)
 }
 
 const deleteGiftSuccess = function (id) {
-  $('#message').text(`Your're gift has been removed`)
+  $('#message').text(`You gift has been removed`)
   $('.gift-' + id).remove()
 }
 

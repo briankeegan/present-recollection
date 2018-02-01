@@ -38,7 +38,7 @@ const signInSuccess = function (data) {
   $('.navbar-collapse').collapse('hide')
   $('#present-recollection-modal').modal('toggle')
   $('#present-recollection-modal').html('')
-  $('#message').text('Welcom ' + store.user.email + '!')
+  $('#message').text('Welcome ' + store.user.email + '!' + '  Click "Add friend" to .. well you get the idea!')
   $('.after-sign-in').css('display', 'block')
   $('.inital-page').css('display', 'none')
   return data.user

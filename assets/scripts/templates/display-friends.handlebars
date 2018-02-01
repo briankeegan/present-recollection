@@ -1,5 +1,5 @@
 <button class="btn btn-success btn-lg btn-center" type="button" id="new-friend">Add Friend</button>
-
+<div class="resource-section">
 {{#each friends as |friend|}}
   <div class="row friend-{{friend.id}}" data-id="{{friend.id}}">
     <div class="col col-sm-6 col-sm-offset-2 col-xs-8">
@@ -26,3 +26,4 @@
   </div>
 
 {{/each}}
+</div>

@@ -121,9 +121,11 @@ Build front, connect to back
 *  Before startin front-end version one, I completed version one of the [API](https://github.com/briankeegan/present-recollection-rails-api)
 
 ####    Create gift component - following CRUD
+
 ###### Create
+
 *       I used a bootstrap modal attached to the navbar and sent data on submit
-       - [x]  Create basic New Gift interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
+     - [x]  Create basic New Gift interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
       - [x]  Create event and link to api
       - [x]  Create api connection
       - [x]  Back in event add `.then` method to api, so ui runs after success or failure
@@ -140,24 +142,24 @@ Build front, connect to back
     - [x]  Create ui method to display failure or success message
     - [x]  Use hanlebars to generate html and display within `div#content`
 
-  ###### Update
+###### Update
 
-    - [x]  Create basic update interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
-    - [x]  Create event and link to api
-    - [x]  Create api connection
-    - [x]  Back in event add `.then` method to api, so ui runs after success or failure
-    - [x]  Create ui method to display failure or success message
-    - [x]  Connect to Read methods, so a GET request is sent after completion of update, thus content is updated!
+  - [x]  Create basic update interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
+  - [x]  Create event and link to api
+  - [x]  Create api connection
+  - [x]  Back in event add `.then` method to api, so ui runs after success or failure
+  - [x]  Create ui method to display failure or success message
+  - [x]  Connect to Read methods, so a GET request is sent after completion of update, thus content is updated!
 
-  ###### Delete
+###### Delete
 
-    - [x]  Create basic delete interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
-    - [x] To do this, I wanted a delete confirmation.  I acheived this by using bootraps popover. (If your curious please reach out!)
-    - [x]  Create event and link to api
-    - [x]  Create api connection
-    - [x]  Back in event add `.then` method to api, so ui runs after success or failure
-    - [x]  Create ui method to display failure or success message
-    - [x]  Connect to Read methods, so a GET request is sent after completion of update, thus content is updated!
+  - [x]  Create basic delete interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
+  - [x] To do this, I wanted a delete confirmation.  I acheived this by using bootraps popover. (If your curious please reach out!)
+  - [x]  Create event and link to api
+  - [x]  Create api connection
+  - [x]  Back in event add `.then` method to api, so ui runs after success or failure
+  - [x]  Create ui method to display failure or success message
+  - [x]  Connect to Read methods, so a GET request is sent after completion of update, thus content is updated!
 
 ##### Autofill Update modal
 
@@ -173,11 +175,12 @@ Build front, connect to back
 *  Before startin front-end version two, I completed version two of the [API](https://github.com/briankeegan/present-recollection-rails-api)
 
 ####    Create friend component - following CRUD
+
 ###### Create Friend
-*       The road got easier, as I followed along almost exactly to what I did with the gift component.
-*      As I progressed I added more handlebars.
-      - [x]  Create following same steps as before.
-      - [x] This time, add create button to `handlebars` file itself
+*   The road got easier, as I followed along almost exactly to what I did with the gift component.
+*  As I progressed I added more handlebars.
+    - [x]  Create following same steps as before.
+    - [x] This time, add create button to `handlebars` file itself
 
 ###### Read friend's
 
