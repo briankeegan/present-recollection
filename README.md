@@ -25,7 +25,7 @@ This is the frontend repo of the [Present Recollection](https://github.com/brian
 
 This is the backend deployed API on heroku of the [Present Recollection](https://present-recollection-rails-api.herokuapp.com) project.
 
-This is the frontend repo of the [Present Recollection](https://github.com/briankeegan/present-recollection-rails-api) project.
+This is the backend repo of the [Present Recollection](https://github.com/briankeegan/present-recollection-rails-api) project.
 
 
 ## How to Use
