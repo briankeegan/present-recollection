@@ -28,6 +28,12 @@ const onDisplayFriends = function (event) {
     .catch(ui.displayFriendsFailure)
 }
 
+const onClickBack = function (event) {
+  api.displayFriends()
+    .then(ui.clickBack)
+    .catch(ui.displayFriendsFailure)
+}
+
 const onOpenUpdateFriendModal = function (data) {
   const id = data.target.dataset.id
   api.retrieveFriend(id)
@@ -47,6 +53,7 @@ const onUpdateFriend = function (event) {
 
 const onClickFriend = function (event) {
   const id = $(event.target).parents('.row').data('id')
+  $('#message').text(``)
   giftEvents.onDisplayGifts(id)
 }
 
@@ -59,7 +66,7 @@ const addHandler = function () {
   $('#content').on('click', '.friend-update', onOpenUpdateFriendModal)
   $('#present-recollection-modal').on('submit', '#update-friend', onUpdateFriend)
   $('#content').on('click', '.show-gifts', onClickFriend)
-  $('#content').on('click', '#load-friends', onDisplayFriends)
+  $('#content').on('click', '#load-friends', onClickBack)
 }
 
 module.exports = {

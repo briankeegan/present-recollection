@@ -11,6 +11,13 @@ const displayFriendsSuccess = function (data) {
   $('#content').html(displayFriendsHTML)
   addPopovers(data.friends, 'friend')
 }
+const clickBack = function (data) {
+  // console.log(data.friends)
+  $('#message').text(``)
+  const displayFriendsHTML = displayFriendsTemplate({ friends: data.friends })
+  $('#content').html(displayFriendsHTML)
+  addPopovers(data.friends, 'friend')
+}
 
 const displayFriendsFailure = function (e) {
   $('#message').text('Unable to retrieve friends... Sad day...')
@@ -31,6 +38,7 @@ const addFriendFailure = function (that) {
 
 const loadNewFriendForm = function () {
   // console.log('inside loadNewFriendForm', data)
+
   const newFriendFormHTML = newFriendFormTemplate()
   $('#present-recollection-modal').html(newFriendFormHTML)
   $('#present-recollection-modal').modal('toggle')
@@ -77,5 +85,6 @@ module.exports = {
   updateFriendSuccess,
   updateFriendFailure,
   deleteFriendSuccess,
-  deleteFriendFailure
+  deleteFriendFailure,
+  clickBack
 }

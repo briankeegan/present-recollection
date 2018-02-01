@@ -20,6 +20,7 @@ const newGiftFailure = function (e) {
 const displayGiftSuccess = function (data) {
   const showGiftsHTML = displayGiftsTemplate({ friend: data.friend })
   $('#content').html(showGiftsHTML)
+  // $('#message').text(``)
   addPopovers(data.friend.gifts, 'gift')
 }
 
