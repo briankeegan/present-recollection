@@ -19,6 +19,14 @@ Your mom! Your dad! Your siblings!  Any good friend.
 I wanted to make simple easy to use app, one that I will use.
 
 
+This is the frontend deployed site of the [Present Recollection](https://briankeegan.github.io/present-recollection/) project.
+
+This is the frontend repo of the [Present Recollection](https://github.com/briankeegan/present-recollection) project.
+
+This is the backend deployed API on heroku of the [Present Recollection](https://present-recollection-rails-api.herokuapp.com) project.
+
+This is the frontend repo of the [Present Recollection](https://github.com/briankeegan/present-recollection-rails-api) project.
+
 
 ## How to Use
 
