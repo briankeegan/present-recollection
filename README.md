@@ -2,16 +2,16 @@
 
 ## About
 
-My fiance is has always been the best gift giver.  It always blew my mind when she continuesly picked the prefect present.
+My fiance is has always been the best gift giver.  It always blew my mind when she continuously picked the perfect present.
 How did come up with the brilliance?
 The solution? Simple!
 Everytime one her friends/family mentioned something that they liked she would simply write it down!
 
-What I would like to design is a way to keep track of all your friends familys gift ideas.
+What I would like to design is a way to keep track of all your friends’ gift ideas.
 Initially it would just be a list, of gifts, each associated with a person and DOB.
 
 If I have I'd like to only show a person, and on click, list the present ideas.
-Maybe orginzational options would be cool as well!
+Maybe organizational options would be cool as well!
 
 Who would use this? Who wouldn't use this!
 Your mom! Your dad! Your siblings!  Any good friend.
@@ -33,8 +33,8 @@ This is the backend repo of the [Present Recollection](https://github.com/briank
 1.  Create Account
 2.  Log in
 3.  Add a friend
-  1. If you mispell your friends name, or write the wrong birthday, go edit friend
-  2. If you want to remove a friend from the list click delelete and confirm deletion
+  1. If you misspell your friends name, or write the wrong birthday, go edit friend
+  2. If you want to remove a friend from the list click delete and confirm deletion
 4. Click on your friend to create a gift / view gifts associated with that friend
 5. Add a gift to that friend.  You'll know which friend because their name will be at the top
   1. If you want to update the gift, press update, and you can go ahead and edit!
@@ -148,7 +148,7 @@ Build front, connect to back
     - [x]  Create api connection
     - [x]  Back in event add `.then` method to api, so ui runs after success or failure
     - [x]  Create ui method to display failure or success message
-    - [x]  Use hanlebars to generate html and display within `div#content`
+    - [x]  Use handlebars to generate html and display within `div#content`
 
 ###### Update
 
@@ -162,7 +162,7 @@ Build front, connect to back
 ###### Delete
 
   - [x]  Create basic delete interface as close to [wireframe](https://projects.invisionapp.com/freehand/document/Jn0SGLpJr) as possible to gifts.
-  - [x] To do this, I wanted a delete confirmation.  I acheived this by using bootraps popover. (If your curious please reach out!)
+  - [x] To do this, I wanted a delete confirmation.  I achieved this by using Bootstrap popover. (If your curious please reach out!)
   - [x]  Create event and link to api
   - [x]  Create api connection
   - [x]  Back in event add `.then` method to api, so ui runs after success or failure
@@ -225,7 +225,7 @@ Build front, connect to back
 
 
 ### Difficulties
-  -  Some of the biggest challenges where using bootstrap in a dynamically created enviorment.
+  -  Some of the biggest challenges where using bootstrap in a dynamically created environment.
   - With help (see credit below!) I was able to overcome most of the problems but the popover issue took me a very long time.
 
 ### Future iterations
