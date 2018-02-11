@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Present Recollection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav class="nav container-fluid">
+    <a class="navbar-brand" href="#">Present Recollection</a>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" class="inital-page" id="open-sign-in-modal">
+        Sign In
+      </a></li>
+      <li><a href="#" class="inital-page" id="open-sign-up-modal">
+        Sign Up
+      </a></li>
+      <li><a href="#" class="after-sign-in" id="open-change-password-modal">Password</a></li>
+      <li><a href="#" class="after-sign-in" id="logout">Logout</a></li>
+      <li><a href="#" id="open-about-modal">About</a></li>
+    </ul>
+  </nav>
+  <!-- main content -->
+  <main class="container-fluid">
+    <div class="container message-container">
+      <h2 class="message" id="message">
+            <!-- Message goes here -->
+      </h2>
+    </div>
+    <div class="container-fluid" id="content"></div>
+
+    <!-- present-recollection-modal -->
+    <div class="modal fade" id="present-recollection-modal" tabindex="-1" role="dialog" aria-labelledby="present-recollection-modal" aria-hidden="true">
+      <!-- modal conent goes here -->
+    </div>
+  </main>
+</body>
+</html>
